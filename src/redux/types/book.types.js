@@ -1,0 +1,6 @@
+module.exports = {
+	GET_ALL: 'BOOK|GET_ALL',
+	CREATE: 'BOOK|CREATE',
+	UPDATE: 'BOOK|UPDATE',
+	DELETE: 'BOOK|DELETE',
+}
