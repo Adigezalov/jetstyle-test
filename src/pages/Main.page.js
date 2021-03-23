@@ -10,7 +10,6 @@ const MainPage = () => {
 	const books = useSelector(s => s.book.books)
 	const [imagePreview, setImagePreview] = useState(null)
 	const [disableEditBook, setDisableEditBook] = useState(false)
-	const [removedBook, setRemovedBook] = useState(null)
 
 	useEffect(() => {
 		dispatch(getAllBooksAction())
@@ -41,7 +40,6 @@ const MainPage = () => {
 	const resetBookData = () => {
 		setBook({name: null, author: null, cover: null})
 		setImagePreview(null)
-		setRemovedBook(null)
 	}
 
 	const setImage = event => {
@@ -62,8 +60,6 @@ const MainPage = () => {
 		setBook(book)
 		setImagePreview(book.cover)
 	}
-
-	const selectToDelete = id => setRemovedBook(id)
 
 	return (
 		<div style={{display: 'flex', flexDirection: 'row', minHeight: '100%'}}>
