@@ -31,6 +31,11 @@ const MainPage = () => {
 		book.id ? updateBook() : createBook()
 	}
 
+	const resetBook = event => {
+		event.preventDefault()
+		resetBookData()
+	}
+
 	const setBookData = event => setBook({...book, [event.target.name]: event.target.value})
 
 	const resetBookData = () => {
@@ -71,7 +76,7 @@ const MainPage = () => {
 				editBook={editBook}
 				resetImage={resetImage}
 				disableEditBook={disableEditBook}
-				resetBookData={resetBookData}
+				resetBook={resetBook}
 			/>
 		</div>
 	)

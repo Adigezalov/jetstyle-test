@@ -20,7 +20,7 @@ const buttonContainer = {
 const LEFT_WIDTH = 400
 
 const NewBookComponent = props => {
-	const {imagePreview, setImage, setBookData, editBook, resetImage, book, disableEditBook, resetBookData} = props
+	const {imagePreview, setImage, setBookData, editBook, resetImage, book, disableEditBook, resetBook} = props
 
 	return (
 		<ContainerComponent style={{width: LEFT_WIDTH}}>
@@ -57,7 +57,11 @@ const NewBookComponent = props => {
 						>
 							{book.id ? 'Редактировать книгу' : 'Создать книгу'}
 						</button>
-						<button type='submit' style={{...buttonContainer, backgroundColor: colors.red}} onClick={resetBookData}>
+						<button
+							type='submit'
+							style={{...buttonContainer, backgroundColor: colors.red}}
+							onClick={event => resetBook(event)}
+						>
 							Отмена
 						</button>
 					</div>
